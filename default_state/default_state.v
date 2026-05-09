@@ -5,7 +5,7 @@
 //    - All 4 LEDs OFF (active-low, so driven HIGH)
 //    - Buzzer OFF
 //    - Servo signal LOW (no PWM)
-//    - 7-segment display OFF (all segments LOW, digits disabled)
+//    - 7-segment display ON (all segments HIGH, digits enabled)
 //    - OLED display OFF (sends 0xAE via I2C, then idles)
 //    - RGB LED OFF (SB_RGBA_DRV disabled)
 // =============================================================================
