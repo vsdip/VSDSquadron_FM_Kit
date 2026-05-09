@@ -1,0 +1,58 @@
+# ==============================================================================
+#  VSDSquadron FM Kit — Global Pin Constraint File
+#  Target: Lattice iCE40 UP5K (SG48 package)
+# ==============================================================================
+
+# --- LEDs (active-low) ---
+set_io  led0        13
+set_io  led1        18
+set_io  led2        19
+set_io  led3        21
+
+# --- Buzzer ---
+set_io  buzzer      2
+
+# --- Servo Motor (SG90 PWM) ---
+set_io  servo       3
+
+# --- Push Switches (active-high) ---
+set_io  sw0         9
+set_io  sw1         10
+set_io  sw2         11
+set_io  sw3         12
+
+# --- Toggle Switches (default OFF, active-high) ---
+set_io  sw_tog0     4
+set_io  sw_tog1     6
+
+# --- RGB LED (driven by SB_RGBA_DRV primitive) ---
+set_io  rgb_red     41
+set_io  rgb_green   39
+set_io  rgb_blue    40
+
+# --- OLED Display (I2C, 0.91" SSD1306 128x32) ---
+set_io  sda         37
+set_io  scl         36
+
+# --- 7-Segment Display ---
+set_io  seg_a       32
+set_io  seg_b       31
+set_io  seg_c       28
+set_io  seg_d       27
+set_io  seg_e       26
+set_io  seg_f       25
+set_io  seg_g       23
+
+# Important: digits are swapped from the earlier PCF
+set_io  dig0        35      # DIG1 / tens / left digit
+set_io  dig1        34      # DIG2 / ones / right digit
+
+# --- PMOD Header (8 pins) ---
+set_io  pmod1       38
+set_io  pmod2       42
+set_io  pmod3       43
+set_io  pmod4       44
+set_io  pmod5       45
+set_io  pmod6       46
+set_io  pmod7       47
+set_io  pmod8       48
