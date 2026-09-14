@@ -72,3 +72,40 @@ sudo ./test_kit.sh
 ```
 
 At the end, a summary shows how many tests passed out of 9 and the board is left in its default clean state.
+
+## Unified Automatic Peripheral Demonstration
+
+The unified Verilog design runs the following tests simultaneously:
+
+* Servo CW, stop, and CCW cycle
+* 7-segment display counter from 00 to 99
+* OLED SSD1306 animation followed by “VSD” display
+* RGB LED colour cycle
+* 1 kHz buzzer
+* Push-switch LED indication
+* LED binary counter
+* ADS1015 ADC level display
+* Shared 12 MHz oscillator for lower LUT usage
+
+### Toggle Switch Behaviour
+
+* Toggle Switch 1 ON: Buzzer enabled
+* Toggle Switch 1 OFF: Buzzer disabled
+* Toggle Switch 2 ON: Servo motor runs automatically
+* Toggle Switch 2 OFF: Servo motor stops
+
+### Build and Flash
+
+Copy `unified_test_kit.v` to the repository root and run:
+
+```bash
+make TOP=unified_test_kit VERILOG_FILES=unified_test_kit.v build
+sudo make TOP=unified_test_kit flash
+```
+
+The design uses the existing `VSDSquadronFM.pcf` pin constraint file.
+
+After flashing once, all tests start automatically whenever the board is powered through USB.
+
+The source has passed static checks. Exact LUT usage must be verified using the Yosys and nextpnr toolchain. Confirm that the final build reports resource usage below the UP5K’s approximately 5.3K LUT capacity.
+
